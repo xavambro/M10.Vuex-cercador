@@ -7,20 +7,22 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {films,
           input:'',
-          availability: true
+          availability:true
         },
   getters:{
     getFilms (state) {
       return state.films
     },
-    getINput (state) {
+    getInput (state) {
       return state.input
     },
     getAvailability(state){
       return state.availability
     },
     getFilteredFilms (state){
-      return state.films.filter( film => film.title.toUpperCase().includes(state.input.toUpperCase()) && !film.available)
+      
+      return state.films.filter( film => film.title.toUpperCase().includes(state.input.toUpperCase()))
+      
     },
     getAvailable (state){
       return state.films.filter(film => film.available)
