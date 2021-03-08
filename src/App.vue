@@ -1,8 +1,10 @@
 <template>
   <div id="app">
+    <div class="container">
     <h1>Buscador Vuex</h1>
     <Search></Search>
     <Films></Films>
+    </div>
   </div>
 </template>
 
