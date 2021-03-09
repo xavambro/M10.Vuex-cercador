@@ -7,7 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {films,
           input:'',
-          availability:true
+          availability:''
         },
   getters:{
     getFilms (state) {
@@ -20,9 +20,15 @@ export default new Vuex.Store({
       return state.availability
     },
     getFilteredFilms (state){
-      
-      return state.films.filter( film => film.title.toUpperCase().includes(state.input.toUpperCase()))
-      
+      if (state.availability == "available")
+      return state.films.filter( film => film.title.toUpperCase().includes(state.input.toUpperCase())).filter( film => film.available)
+      else if(state.availability == "notavailable"){
+        return state.films.filter( film => film.title.toUpperCase().includes(state.input.toUpperCase())).filter( film => !film.available)
+ 
+      }else{
+        return state.films.filter( film => film.title.toUpperCase().includes(state.input.toUpperCase()))
+      }
+
     },
     getAvailable (state){
       return state.films.filter(film => film.available)

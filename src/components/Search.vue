@@ -5,9 +5,9 @@
         <input type="text" class="form-control" id="search" placeholder="Introduzca su busqueda" v-model="input" @input="addInput(input)">
     </div>
     <div class="form-check">
-        <input type="radio" class="form-check-input" id="available" value="true" v-model="picked" @input="changeAvailability(picked)">
+        <input type="radio" class="form-check-input" id="available" value="available" v-model="picked" @input="changeAvailability(picked)">
         <label class="form-check-label" for="available">Disponible</label>
-        <input type="radio" class="form-check-input" id="notavailable" value="false" v-model="picked" @input="changeAvailability(picked)">
+        <input type="radio" class="form-check-input" id="notavailable" value="notavailable" v-model="picked" @input="changeAvailability(picked)">
         <label class="form-check-label" for="notavailable">No disponible</label>
     </div>
 </form>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="getInput.length >= 3" class="row">
+    <div v-if="getInput.length >= 3 || getInput.length ==0" class="row">
       <div
         v-for="item in getFilteredFilms"
         :key="item.id"
