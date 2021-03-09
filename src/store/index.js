@@ -10,9 +10,9 @@ export default new Vuex.Store({
           availability:''
         },
   getters:{
-    getFilms (state) {
+    /* getFilms (state) {
       return state.films
-    },
+    }, */
     getInput (state) {
       return state.input
     },
@@ -30,14 +30,14 @@ export default new Vuex.Store({
       }
 
     },
-    getAvailable (state){
+    /* getAvailable (state){
       return state.films.filter(film => film.available)
 
     },
     getNotAvailable (state){
       return state.films.filter(film => !film.available)
 
-    }
+    } */
   },
   mutations: {
     addInput (state, inp){

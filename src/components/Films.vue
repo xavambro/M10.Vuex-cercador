@@ -4,9 +4,9 @@
       <div
         v-for="item in getFilteredFilms"
         :key="item.id"
-        class="card col-md-6"
+        class="card col-md-5"
       >
-        <div class="card-header">
+        <div class="card-header" :style="item.available ? {'background-color':'rgb(185, 226, 185)'} : ''">
           {{ item.title }}
           <p>Available: {{ item.available }}</p>
         </div>
@@ -23,24 +23,10 @@
   </div>
 </template>
 
-<script>
-import { mapGetters } from "vuex";
+<script src="../scripts/films.js">
 
-export default {
-  name: "Films",
-  methods: {},
-  computed: {
-    ...mapGetters(["getFilms", "getFilteredFilms", "getAvailable", "getInput"]),
-  },
-};
 </script>
 
-<style scoped>
-.card {
-  margin-top: 20px;
-  padding: 0px;
-}
-.alert {
-  margin-top: 20px;
-}
+<style src="../styles/films.css" scoped>
+
 </style>
