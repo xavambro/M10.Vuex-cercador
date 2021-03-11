@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div v-if="getInput.length >= 3 || getInput.length ==0" class="row">
+    <Flip>
+    <div key="key" v-if="getInput.length >= 3 || getInput.length ==0" class="row">
       <div
         v-for="item in getFilteredFilms"
         :key="item.id"
@@ -17,9 +18,13 @@
         </div>
       </div>
     </div>
+    </Flip>
+    <transition enter-active-class="animate__animated animate__bounceIn" leave-active-class="animate__animated animate__fadeOut" >
     <div v-if="getFilteredFilms.length == 0" class="alert alert-danger">
       No s'ha trobat cap pelicula
     </div>
+    </transition>
+    
   </div>
 </template>
 
